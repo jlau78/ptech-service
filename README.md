@@ -10,6 +10,6 @@ The ptech-service is an API service to the Catalog Database.
 
 To run this API service execute the command in a terminal:
 
-node app.js
+`node app.js`
 
 

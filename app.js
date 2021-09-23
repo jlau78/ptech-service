@@ -21,7 +21,7 @@ app.get("/products/:category",(req,res) => {
     let products;
     let category = req.params.category;
     connection.query(sql, [category], (error, results, fields) => {
-        products = JSON.stringify(results); 
+        products = results; 
         if (error) {
             console.error(error.message);
             res.status(500).json('Internal server error:',error);
@@ -43,7 +43,7 @@ app.get("/skus/:productid",(req,res) => {
     let skus = {};
     let productid = req.params.productid;
     connection.query(sql, [productid], (error, results, fields) => {
-        skus = JSON.stringify(results); 
+        skus = results; 
         if (error) {
             console.error(error.message);
             res.status(500).send('Internal server error:',error);
@@ -54,12 +54,9 @@ app.get("/skus/:productid",(req,res) => {
     res.status(200).json(skus);
 
     });
-
 });
 
 
-
-
-app.listen(3000, () => {
-    console.log('Server is running at port 3000');
+app.listen(3001, () => {
+    console.log('Server is running at port 3001');
 });

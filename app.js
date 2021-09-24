@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const mysql = require('mysql');
 
@@ -14,10 +15,20 @@ connection.connect((err) => {
     console.log('Connected to MySQL Server!');
 });
 
+// Handle CORS by setting OPTIONS for express
+app.use(cors({
+    origin: '*'
+}));
+
 app.get("/products/:category",(req,res) => {
 
     let sql = 'SELECT P.ID, P.NAME, P.DESCRIPTION FROM CS_PRODUCT P JOIN CS_CATEGORY_PRD CP '
     + 'ON CP.PRODUCT_ID = P.ID WHERE CP.CATEGORY_ID=?';
+
+    // let sqlJson = 'SELECT JSON_ARRAYAGG(JSON_OBJECT("id", P.ID, "name", P.NAME, "description", P.DESCRIPTION)) FROM CS_PRODUCT P JOIN CS_CATEGORY_PRD CP '
+    // + 'ON CP.PRODUCT_ID = P.ID WHERE CP.CATEGORY_ID=?';
+
+
     let products;
     let category = req.params.category;
     connection.query(sql, [category], (error, results, fields) => {
@@ -29,6 +40,11 @@ app.get("/products/:category",(req,res) => {
         }
 
     console.log("Found products for category:",category,", products:",products);
+
+    products.map(item => console.log(JSON.parse(JSON.stringify(item))));
+    console.log("Array of json parsed: " + JSON.parse(JSON.stringify(products)));
+    console.log("Array of json: " + products);
+
 
     res.status(200).json(products);
 
@@ -51,7 +67,7 @@ app.get("/skus/:productid",(req,res) => {
         }
 
     //console.log("Found products for category:",category,", products:",products);
-    res.status(200).json(skus);
+    res.status(200).json(skus).header({"Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "*" });
 
     });
 });

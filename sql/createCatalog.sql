@@ -17,8 +17,6 @@ CREATE TABLE IF NOT EXISTS CATEGORY (
 	
 );
 
-
-
 CREATE TABLE IF NOT EXISTS CS_CATEGORY
 (
     ID INT AUTO_INCREMENT,
@@ -33,6 +31,8 @@ CREATE TABLE IF NOT EXISTS CS_PRODUCT
     ID INT AUTO_INCREMENT,
     NAME varchar(50),
     DESCRIPTION text,
+    MEDIA INT,
+    PRICE INT,
     PRIMARY KEY (ID)
 );
 
@@ -106,8 +106,40 @@ ALTER TABLE CS_SKU_ATTRIBUTE
 ADD FOREIGN KEY (ATTRIBUTE_ID) REFERENCES CS_ATTRIBUTE(ID);
 
 
+CREATE TABLE IF NOT EXISTS MEDIA
+(
+	ID INT AUTO_INCREMENT,
+	NAME VARCHAR(50),
+	TYPE INT,
+	PATH VARCHAR(255),
+	PRIMARY KEY (ID)
+);
+
+
+CREATE TABLE IF NOT EXISTS PRICE_INFO
+(
+	ID INT AUTO_INCREMENT,
+	REF VARCHAR(255),
+	PRICE DECIMAL(9,2),
+	TAX DECIMAL(9,2),
+	PRIMARY KEY (ID)
+);
+
+
+
+
+
+--///////////////////////////////////////
+--// User admin
+--///////////////////////////////////////
+
+-- Allow access to root user from localhost
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'passw0rd'
 
+-- Allow access to root user from all IPs
+ALTER USER 'root'@'*' IDENTIFIED WITH mysql_native_password BY 'passw0rd'
+
+-- Run this to accept new privileges above
 FLUSH PRIVILEGES;
 
 -- show tables;

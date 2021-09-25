@@ -22,8 +22,12 @@ app.use(cors({
 
 app.get("/products/:category",(req,res) => {
 
-    let sql = 'SELECT P.ID, P.NAME, P.DESCRIPTION FROM CS_PRODUCT P JOIN CS_CATEGORY_PRD CP '
-    + 'ON CP.PRODUCT_ID = P.ID WHERE CP.CATEGORY_ID=?';
+    let sql = 'SELECT P.ID, P.NAME, P.DESCRIPTION , M.PATH AS MEDIA , PI.PRICE , PI.TAX '
+        + 'FROM CS_PRODUCT P '
+        + 'JOIN CS_CATEGORY_PRD CP ON CP.PRODUCT_ID = P.ID '
+        + 'JOIN MEDIA M ON M.ID = P.MEDIA '
+        + 'JOIN PRICE_INFO PI ON PI.ID = P.PRICE '
+        + 'WHERE CP.CATEGORY_ID=?'
 
     let products;
     let category = req.params.category;

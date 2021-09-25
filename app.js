@@ -25,10 +25,6 @@ app.get("/products/:category",(req,res) => {
     let sql = 'SELECT P.ID, P.NAME, P.DESCRIPTION FROM CS_PRODUCT P JOIN CS_CATEGORY_PRD CP '
     + 'ON CP.PRODUCT_ID = P.ID WHERE CP.CATEGORY_ID=?';
 
-    // let sqlJson = 'SELECT JSON_ARRAYAGG(JSON_OBJECT("id", P.ID, "name", P.NAME, "description", P.DESCRIPTION)) FROM CS_PRODUCT P JOIN CS_CATEGORY_PRD CP '
-    // + 'ON CP.PRODUCT_ID = P.ID WHERE CP.CATEGORY_ID=?';
-
-
     let products;
     let category = req.params.category;
     connection.query(sql, [category], (error, results, fields) => {
@@ -72,6 +68,36 @@ app.get("/skus/:productid",(req,res) => {
     });
 });
 
+
+app.get("/attribs/:productid",(req,res) => {
+
+    let sql = 'SELECT CA.ID, CA.NAME, CA.DESCRIPTION , CA.VALUE FROM CS_PRODUCT P '
+    + 'JOIN CS_PROD_ATTRIBUTE CP ON CP.PRODUCT_ID = P.ID '
+    + 'JOIN CS_ATTRIBUTE CA ON CA.ID = CP.ATTRIBUTE_ID '
+    + 'WHERE CP.PRODUCT_ID=?'
+    ;
+
+    let attributes;
+    let product = req.params.productid;
+    connection.query(sql, [product], (error, results, fields) => {
+        attributes = results; 
+        if (error) {
+            console.error(error.message);
+            res.status(500).json('Internal server error:',error);
+            return;
+        }
+
+    console.log("Found attributes for product:",product,", attributes:",attributes);
+
+    attributes.map(item => console.log(JSON.parse(JSON.stringify(item))));
+    console.log("Array of json parsed: " + JSON.parse(JSON.stringify(attributes)));
+    console.log("Array of json: " + attributes);
+
+
+    res.status(200).json(attributes);
+
+    });
+});
 
 app.listen(3001, () => {
     console.log('Server is running at port 3001');

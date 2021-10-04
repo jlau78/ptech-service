@@ -6,33 +6,30 @@ INSERT INTO ptech.CS_CATEGORY
 (ID, NAME, DESCRIPTION)
 VALUES(1002, 'Accessories', 'Mobiles Accessories');
 
-
-
 INSERT INTO ptech.CS_PRODUCT
-(ID, NAME, DESCRIPTION, MEDIA, PRICE)
-VALUES(1001, 'IPhone 11', 'IPhone 11', 1001, 1001);
+(ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
+VALUES(1001, 'IPhone 11', 'IPhone 11', 1001, 1001, 1010);
 INSERT INTO ptech.CS_PRODUCT
-(ID, NAME, DESCRIPTION, MEDIA, PRICE)
-VALUES(1002, 'IPhone 12', 'IPhone 12', 1002, 1001);
+(ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
+VALUES(1002, 'IPhone 12', 'IPhone 12', 1002, 1001, 1011);
 INSERT INTO ptech.CS_PRODUCT
-(ID, NAME, DESCRIPTION, MEDIA, PRICE)
-VALUES(1003, 'Samsung Galaxy 20 Navy 128GB', 'Say hello to the 2021 Fan Edition of the Galaxy S20. It features a stunning Infinity-O Super AMOLED display, massive battery and triple cameras, all powered by a mighty Snapdragon 865 processor. Plus, it comes in a rainbow of colours so you can pick your shade and show off your style.', 1006, 1003);
+(ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
+VALUES(1003, 'Samsung Galaxy 20 Navy 128GB', 'Say hello to the 2021 Fan Edition of the Galaxy S20. It features a stunning Infinity-O Super AMOLED display, massive battery and triple cameras, all powered by a mighty Snapdragon 865 processor. Plus, it comes in a rainbow of colours so you can pick your shade and show off your style.', 1006, 1003, 1013);
 INSERT INTO ptech.CS_PRODUCT
-(ID, NAME, DESCRIPTION, MEDIA, PRICE)
-VALUES(1004, 'Samsung Galaxy 10 Plus', 'Samsung Galaxy 10 Plus. Larger phone of the Galaxy 10 range.', 1007, 1003);
+(ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
+VALUES(1004, 'Samsung Galaxy 10 Plus', 'Samsung Galaxy 10 Plus. Larger phone of the Galaxy 10 range.', 1007, 1003, 1013);
 INSERT INTO ptech.CS_PRODUCT
-(ID, NAME, DESCRIPTION, MEDIA, PRICE)
-VALUES(1005, 'IPhone 256GB Black', 'owered by the blazing fast A13 Bionic processor nothing will hold you back. The new night mode will take perfect photos in low light conditions, and the front camera can even take a slow-mo video!', 1001, 1002);
+(ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
+VALUES(1005, 'IPhone 256GB Black', 'owered by the blazing fast A13 Bionic processor nothing will hold you back. The new night mode will take perfect photos in low light conditions, and the front camera can even take a slow-mo video!', 1001, 1002, 1010);
 INSERT INTO ptech.CS_PRODUCT
-(ID, NAME, DESCRIPTION, MEDIA, PRICE)
-VALUES(1006, 'IPhone 256GB Red', 'owered by the blazing fast A13 Bionic processor nothing will hold you back. The new night mode will take perfect photos in low light conditions, and the front camera can even take a slow-mo video! ', 1002, 1002);
+(ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
+VALUES(1006, 'IPhone 256GB Red', 'owered by the blazing fast A13 Bionic processor nothing will hold you back. The new night mode will take perfect photos in low light conditions, and the front camera can even take a slow-mo video! ', 1002, 1002, 1010);
 INSERT INTO ptech.CS_PRODUCT
-(ID, NAME, DESCRIPTION, MEDIA, PRICE)
-VALUES(1007, 'IPhone 256GB Green', 'IPhone 256 GB Green', 1003, 1002);
+(ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
+VALUES(1007, 'IPhone 256GB Green', 'IPhone 256 GB Green', 1003, 1002, 1010);
 INSERT INTO ptech.CS_PRODUCT
-(ID, NAME, DESCRIPTION, MEDIA, PRICE)
-VALUES(1008, 'IPhone 128GB Green', 'IPhone 256 GB Green', 1003, 1001);
-
+(ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
+VALUES(1008, 'IPhone 128GB Green', 'IPhone 256 GB Green', 1003, 1001, 1010);
 
 
 INSERT INTO ptech.CS_ATTRIBUTE
@@ -135,7 +132,18 @@ VALUES(1007, 'Galaxy 20 white', 1, '/images/galaxy-s20-fan-edition-2021WHITE.png
 INSERT INTO ptech.MEDIA
 (ID, NAME, `TYPE`, `PATH`)
 VALUES(1008, 'Galaxy 20 RED', 1, '/images/galaxy-s20-fan-edition-2021RED.png');
-
+INSERT INTO ptech.MEDIA
+(ID, NAME, `TYPE`, `PATH`)
+VALUES(1010, 'IPhone 11 List', 2, '/images/iphone-11-list.jpeg');
+INSERT INTO ptech.MEDIA
+(ID, NAME, `TYPE`, `PATH`)
+VALUES(1011, 'IPhone 12 List', 2, '/images/iphone-12-list.jpeg');
+INSERT INTO ptech.MEDIA
+(ID, NAME, `TYPE`, `PATH`)
+VALUES(1012, 'IPhone SE 2020 List', 2, '/images/iphone-se-2020-list.jpeg');
+INSERT INTO ptech.MEDIA
+(ID, NAME, `TYPE`, `PATH`)
+VALUES(1013, 'Galaxy S20 List', 2, '/images/galaxy-s20-fan-edition-2021-list.jpeg');
 
 
 INSERT INTO ptech.PRICE_INFO

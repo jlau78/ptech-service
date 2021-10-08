@@ -31,6 +31,32 @@ INSERT INTO ptech.CS_PRODUCT
 (ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
 VALUES(1008, 'IPhone 128GB Green', 'IPhone 256 GB Green', 1003, 1001, 1010);
 
+INSERT INTO ptech.CS_PRODUCT
+(ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
+VALUES(1001, 'IPhone 11', 'With a revamped dual-camera featuring an ultra-wide lens, get ready to take some jaw-dropping photos and videos. An impressive battery life and the revolutionary A13 bionic chip will let you take on some epic mobile games too.', 1001, 1001, 1010);
+INSERT INTO ptech.CS_PRODUCT
+(ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
+VALUES(1002, 'IPhone 12', 'By adding nanoscale ceramic crystals to the glass display, Apple have created a display that’s tougher than any other smartphone screen. It’s also scratch-resistant and offers 4x better drop performance than the iPhone 11.', 1002, 1001, 1011);
+INSERT INTO ptech.CS_PRODUCT
+(ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
+VALUES(1003, 'Samsung Galaxy S21 Ultra', 'Say hello to the 2021 Fan Edition of the Galaxy S21. It features a stunning Infinity-O Super AMOLED display, massive battery and triple cameras, all powered by a mighty Snapdragon 865 processor. Plus, it comes in a rainbow of colours so you can pick your shade and show off your style.', 1006, 1003, 1013);
+INSERT INTO ptech.CS_PRODUCT
+(ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
+VALUES(1004, 'Samsung Galaxy A32 5G', 'Fast downloads, buffer-free streaming, smooth gaming and video calls – this phone offers the lot. And the 48MP main camera lens is a photography ace too.', 1007, 1005, 1013);
+INSERT INTO ptech.CS_PRODUCT
+(ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
+VALUES(1005, 'IPhone 256GB Black', 'owered by the blazing fast A13 Bionic processor nothing will hold you back. The new night mode will take perfect photos in low light conditions, and the front camera can even take a slow-mo video!', 1001, 1002, 1010);
+INSERT INTO ptech.CS_PRODUCT
+(ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
+VALUES(1006, 'IPhone 256GB Red', 'owered by the blazing fast A13 Bionic processor nothing will hold you back. The new night mode will take perfect photos in low light conditions, and the front camera can even take a slow-mo video! ', 1002, 1002, 1010);
+INSERT INTO ptech.CS_PRODUCT
+(ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
+VALUES(1007, 'IPhone 256GB Green', 'IPhone 256 GB Green', 1003, 1002, 1010);
+INSERT INTO ptech.CS_PRODUCT
+(ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
+VALUES(1008, 'IPhone 128GB Green', 'IPhone 256 GB Green', 1003, 1001, 1010);
+
+
 
 INSERT INTO ptech.CS_ATTRIBUTE
 (ID, NAME, DESCRIPTION, VALUE)
@@ -59,6 +85,40 @@ VALUES(1008, 'memory', 'IPhone 11 128GB', '128GB');
 INSERT INTO ptech.CS_ATTRIBUTE
 (ID, NAME, DESCRIPTION, VALUE)
 VALUES(1009, 'memory', 'IPhone 11 256GB', '256GB');
+INSERT INTO ptech.CS_ATTRIBUTE
+(ID, NAME, DESCRIPTION, VALUE)
+VALUES(1015, 'dimension', 'IPhone 12 dimensions H x W x D', '150 x 70.9 x 8.3');
+INSERT INTO ptech.CS_ATTRIBUTE
+(ID, NAME, DESCRIPTION, VALUE)
+VALUES(1016, 'colour', 'IPhone 12 dimensions H x W x D', 'Black');
+INSERT INTO ptech.CS_ATTRIBUTE
+(ID, NAME, DESCRIPTION, VALUE)
+VALUES(1017, 'model', 'IPhone 12 model', 'IPhone 12');
+INSERT INTO ptech.CS_ATTRIBUTE
+(ID, NAME, DESCRIPTION, VALUE)
+VALUES(1018, 'screen size', 'IPhone 12 model', '6.1"');
+INSERT INTO ptech.CS_ATTRIBUTE
+(ID, NAME, DESCRIPTION, VALUE)
+VALUES(1020, 'brand', 'Samsung brand', 'Samsung');
+INSERT INTO ptech.CS_ATTRIBUTE
+(ID, NAME, DESCRIPTION, VALUE)
+VALUES(1031, 'model', 'Galaxy 21 5G', 'Galaxy S21 Ultra 5G');
+INSERT INTO ptech.CS_ATTRIBUTE
+(ID, NAME, DESCRIPTION, VALUE)
+VALUES(1032, 'colour', 'Galaxy 21 5G Grey', 'Black');
+INSERT INTO ptech.CS_ATTRIBUTE
+(ID, NAME, DESCRIPTION, VALUE)
+VALUES(1033, 'screen size', 'Galaxy 21 5G screen', '6.8” Quad HD+ AMOLED display');
+INSERT INTO ptech.CS_ATTRIBUTE
+(ID, NAME, DESCRIPTION, VALUE)
+VALUES(1034, 'memory', 'Galaxy 21 5G memory', '128GB storage');
+INSERT INTO ptech.CS_ATTRIBUTE
+(ID, NAME, DESCRIPTION, VALUE)
+VALUES(1035, 'feature 1', 'Galaxy 21 5G memory', 'Facial recognition and fingerprint scanner');
+INSERT INTO ptech.CS_ATTRIBUTE
+(ID, NAME, DESCRIPTION, VALUE)
+VALUES(1036, 'feature 2', 'Galaxy 21 5G memory', 'Samsung Galaxy S21 Ultra 5G available in Black and Silver');
+
 
 
 
@@ -106,6 +166,31 @@ VALUES(1005, 3, 1003);
 INSERT INTO ptech.CS_PROD_ATTRIBUTE
 (PRODUCT_ID, SEQNUM, ATTRIBUTE_ID)
 VALUES(1005, 4, 1009);
+INSERT INTO ptech.CS_PROD_ATTRIBUTE
+(PRODUCT_ID, SEQNUM, ATTRIBUTE_ID)
+VALUES(1003, 1, 1020);
+INSERT INTO ptech.CS_PROD_ATTRIBUTE
+(PRODUCT_ID, SEQNUM, ATTRIBUTE_ID)
+VALUES(1003, 2, 1030);
+INSERT INTO ptech.CS_PROD_ATTRIBUTE
+(PRODUCT_ID, SEQNUM, ATTRIBUTE_ID)
+VALUES(1003, 3, 1031);
+INSERT INTO ptech.CS_PROD_ATTRIBUTE
+(PRODUCT_ID, SEQNUM, ATTRIBUTE_ID)
+VALUES(1003, 4, 1032);
+INSERT INTO ptech.CS_PROD_ATTRIBUTE
+(PRODUCT_ID, SEQNUM, ATTRIBUTE_ID)
+VALUES(1003, 5, 1033);
+INSERT INTO ptech.CS_PROD_ATTRIBUTE
+(PRODUCT_ID, SEQNUM, ATTRIBUTE_ID)
+VALUES(1003, 6, 1034);
+INSERT INTO ptech.CS_PROD_ATTRIBUTE
+(PRODUCT_ID, SEQNUM, ATTRIBUTE_ID)
+VALUES(1003, 7, 1035);
+INSERT INTO ptech.CS_PROD_ATTRIBUTE
+(PRODUCT_ID, SEQNUM, ATTRIBUTE_ID)
+VALUES(1003, 8, 1036);
+
 
 
 INSERT INTO ptech.MEDIA

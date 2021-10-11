@@ -6,6 +6,59 @@ INSERT INTO ptech.CS_CATEGORY
 (ID, NAME, DESCRIPTION)
 VALUES(1002, 'Accessories', 'Mobiles Accessories');
 
+
+INSERT INTO ptech.MEDIA
+(ID, NAME, `TYPE`, `PATH`)
+VALUES(1001, 'Iphone 11 black', 1, '/images/iphone-11BLACK.png');
+INSERT INTO ptech.MEDIA
+(ID, NAME, `TYPE`, `PATH`)
+VALUES(1002, 'Iphone 11 red', 1, '/images/iphone-11RED.png');
+INSERT INTO ptech.MEDIA
+(ID, NAME, `TYPE`, `PATH`)
+VALUES(1003, 'Iphone 11 green', 1, '/images/iphone-11GREEN.png');
+INSERT INTO ptech.MEDIA
+(ID, NAME, `TYPE`, `PATH`)
+VALUES(1004, 'Iphone 11 white', 1, '/images/iphone-11WHITE.png');
+INSERT INTO ptech.MEDIA
+(ID, NAME, `TYPE`, `PATH`)
+VALUES(1005, 'Iphone 11 yellow', 1, '/images/iphone-11YELLOW.png');
+INSERT INTO ptech.MEDIA
+(ID, NAME, `TYPE`, `PATH`)
+VALUES(1006, 'Galaxy 20 navy', 1, '/images/galaxy-s20-fan-edition-2021NAVY.png');
+INSERT INTO ptech.MEDIA
+(ID, NAME, `TYPE`, `PATH`)
+VALUES(1007, 'Galaxy 20 white', 1, '/images/galaxy-s20-fan-edition-2021WHITE.png');
+INSERT INTO ptech.MEDIA
+(ID, NAME, `TYPE`, `PATH`)
+VALUES(1008, 'Galaxy 20 RED', 1, '/images/galaxy-s20-fan-edition-2021RED.png');
+INSERT INTO ptech.MEDIA
+(ID, NAME, `TYPE`, `PATH`)
+VALUES(1010, 'IPhone 11 List', 2, '/images/iphone-11-list.jpeg');
+INSERT INTO ptech.MEDIA
+(ID, NAME, `TYPE`, `PATH`)
+VALUES(1011, 'IPhone 12 List', 2, '/images/iphone-12-list.jpeg');
+INSERT INTO ptech.MEDIA
+(ID, NAME, `TYPE`, `PATH`)
+VALUES(1012, 'IPhone SE 2020 List', 2, '/images/iphone-se-2020-list.jpeg');
+INSERT INTO ptech.MEDIA
+(ID, NAME, `TYPE`, `PATH`)
+VALUES(1013, 'Galaxy S20 List', 2, '/images/galaxy-s20-fan-edition-2021-list.jpeg');
+
+
+INSERT INTO ptech.PRICE_INFO
+(ID, PRICE, TAX, `REF`)
+VALUES(1001, 509.00, 0.00, 'Iphone 128GB');
+INSERT INTO ptech.PRICE_INFO
+(ID, PRICE, TAX, `REF`)
+VALUES(1002, 659.00, 0.00, 'Iphone 256GB');
+INSERT INTO ptech.PRICE_INFO
+(ID, PRICE, TAX, `REF`)
+VALUES(1003, 498.00, 0.00, 'Samsung Galaxy 20 128GB');
+INSERT INTO ptech.PRICE_INFO
+(ID, PRICE, TAX, `REF`)
+VALUES(1004, 639.00, 0.00, 'Samsung Galaxy 20 256GB');
+
+
 INSERT INTO ptech.CS_PRODUCT
 (ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
 VALUES(1001, 'IPhone 11', 'IPhone 11', 1001, 1001, 1010);
@@ -30,32 +83,6 @@ VALUES(1007, 'IPhone 256GB Green', 'IPhone 256 GB Green', 1003, 1002, 1010);
 INSERT INTO ptech.CS_PRODUCT
 (ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
 VALUES(1008, 'IPhone 128GB Green', 'IPhone 256 GB Green', 1003, 1001, 1010);
-
-INSERT INTO ptech.CS_PRODUCT
-(ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
-VALUES(1001, 'IPhone 11', 'With a revamped dual-camera featuring an ultra-wide lens, get ready to take some jaw-dropping photos and videos. An impressive battery life and the revolutionary A13 bionic chip will let you take on some epic mobile games too.', 1001, 1001, 1010);
-INSERT INTO ptech.CS_PRODUCT
-(ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
-VALUES(1002, 'IPhone 12', 'By adding nanoscale ceramic crystals to the glass display, Apple have created a display that’s tougher than any other smartphone screen. It’s also scratch-resistant and offers 4x better drop performance than the iPhone 11.', 1002, 1001, 1011);
-INSERT INTO ptech.CS_PRODUCT
-(ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
-VALUES(1003, 'Samsung Galaxy S21 Ultra', 'Say hello to the 2021 Fan Edition of the Galaxy S21. It features a stunning Infinity-O Super AMOLED display, massive battery and triple cameras, all powered by a mighty Snapdragon 865 processor. Plus, it comes in a rainbow of colours so you can pick your shade and show off your style.', 1006, 1003, 1013);
-INSERT INTO ptech.CS_PRODUCT
-(ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
-VALUES(1004, 'Samsung Galaxy A32 5G', 'Fast downloads, buffer-free streaming, smooth gaming and video calls – this phone offers the lot. And the 48MP main camera lens is a photography ace too.', 1007, 1005, 1013);
-INSERT INTO ptech.CS_PRODUCT
-(ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
-VALUES(1005, 'IPhone 256GB Black', 'owered by the blazing fast A13 Bionic processor nothing will hold you back. The new night mode will take perfect photos in low light conditions, and the front camera can even take a slow-mo video!', 1001, 1002, 1010);
-INSERT INTO ptech.CS_PRODUCT
-(ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
-VALUES(1006, 'IPhone 256GB Red', 'owered by the blazing fast A13 Bionic processor nothing will hold you back. The new night mode will take perfect photos in low light conditions, and the front camera can even take a slow-mo video! ', 1002, 1002, 1010);
-INSERT INTO ptech.CS_PRODUCT
-(ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
-VALUES(1007, 'IPhone 256GB Green', 'IPhone 256 GB Green', 1003, 1002, 1010);
-INSERT INTO ptech.CS_PRODUCT
-(ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
-VALUES(1008, 'IPhone 128GB Green', 'IPhone 256 GB Green', 1003, 1001, 1010);
-
 
 
 INSERT INTO ptech.CS_ATTRIBUTE
@@ -192,55 +219,4 @@ INSERT INTO ptech.CS_PROD_ATTRIBUTE
 VALUES(1003, 8, 1036);
 
 
-
-INSERT INTO ptech.MEDIA
-(ID, NAME, `TYPE`, `PATH`)
-VALUES(1001, 'Iphone 11 black', 1, '/images/iphone-11BLACK.png');
-INSERT INTO ptech.MEDIA
-(ID, NAME, `TYPE`, `PATH`)
-VALUES(1002, 'Iphone 11 red', 1, '/images/iphone-11RED.png');
-INSERT INTO ptech.MEDIA
-(ID, NAME, `TYPE`, `PATH`)
-VALUES(1003, 'Iphone 11 green', 1, '/images/iphone-11GREEN.png');
-INSERT INTO ptech.MEDIA
-(ID, NAME, `TYPE`, `PATH`)
-VALUES(1004, 'Iphone 11 white', 1, '/images/iphone-11WHITE.png');
-INSERT INTO ptech.MEDIA
-(ID, NAME, `TYPE`, `PATH`)
-VALUES(1005, 'Iphone 11 yellow', 1, '/images/iphone-11YELLOW.png');
-INSERT INTO ptech.MEDIA
-(ID, NAME, `TYPE`, `PATH`)
-VALUES(1006, 'Galaxy 20 navy', 1, '/images/galaxy-s20-fan-edition-2021NAVY.png');
-INSERT INTO ptech.MEDIA
-(ID, NAME, `TYPE`, `PATH`)
-VALUES(1007, 'Galaxy 20 white', 1, '/images/galaxy-s20-fan-edition-2021WHITE.png');
-INSERT INTO ptech.MEDIA
-(ID, NAME, `TYPE`, `PATH`)
-VALUES(1008, 'Galaxy 20 RED', 1, '/images/galaxy-s20-fan-edition-2021RED.png');
-INSERT INTO ptech.MEDIA
-(ID, NAME, `TYPE`, `PATH`)
-VALUES(1010, 'IPhone 11 List', 2, '/images/iphone-11-list.jpeg');
-INSERT INTO ptech.MEDIA
-(ID, NAME, `TYPE`, `PATH`)
-VALUES(1011, 'IPhone 12 List', 2, '/images/iphone-12-list.jpeg');
-INSERT INTO ptech.MEDIA
-(ID, NAME, `TYPE`, `PATH`)
-VALUES(1012, 'IPhone SE 2020 List', 2, '/images/iphone-se-2020-list.jpeg');
-INSERT INTO ptech.MEDIA
-(ID, NAME, `TYPE`, `PATH`)
-VALUES(1013, 'Galaxy S20 List', 2, '/images/galaxy-s20-fan-edition-2021-list.jpeg');
-
-
-INSERT INTO ptech.PRICE_INFO
-(ID, PRICE, TAX, `REF`)
-VALUES(1001, 509.00, 0.00, 'Iphone 128GB');
-INSERT INTO ptech.PRICE_INFO
-(ID, PRICE, TAX, `REF`)
-VALUES(1002, 659.00, 0.00, 'Iphone 256GB');
-INSERT INTO ptech.PRICE_INFO
-(ID, PRICE, TAX, `REF`)
-VALUES(1003, 498.00, 0.00, 'Samsung Galaxy 20 128GB');
-INSERT INTO ptech.PRICE_INFO
-(ID, PRICE, TAX, `REF`)
-VALUES(1004, 639.00, 0.00, 'Samsung Galaxy 20 256GB');
 

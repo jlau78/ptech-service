@@ -57,32 +57,31 @@ VALUES(1003, 498.00, 0.00, 'Samsung Galaxy 20 128GB');
 INSERT INTO ptech.PRICE_INFO
 (ID, PRICE, TAX, `REF`)
 VALUES(1004, 639.00, 0.00, 'Samsung Galaxy 20 256GB');
+INSERT INTO ptech.CS_PRODUCT
+(ID, NAME, DESCRIPTION, MEDIA, LIST_MEDIA, PRICE)
+VALUES(1001, 'IPhone 11', 'Powered by the blazing fast A13 Bionic processor nothing will hold you back. The new night mode will take perfect photos in low light conditions, and the front camera can even take a slow-mo video! ', 1001, 1010, 1001);
+INSERT INTO ptech.CS_PRODUCT
+(ID, NAME, DESCRIPTION, MEDIA, LIST_MEDIA, PRICE)
+VALUES(1002, 'IPhone 12', 'Stream your favourite movies, TV shows and games with super-fast 5G. It all looks more realistic than ever on the 6.1-inch Super Retina XDR display.', 1002, 1011, 1001);
+INSERT INTO ptech.CS_PRODUCT
+(ID, NAME, DESCRIPTION, MEDIA, LIST_MEDIA, PRICE)
+VALUES(1003, 'Samsung Galaxy 20 Navy 128GB', 'Say hello to the 2021 Fan Edition of the Galaxy S20. It features a stunning Infinity-O Super AMOLED display, massive battery and triple cameras, all powered by a mighty Snapdragon 865 processor. Plus, it comes in a rainbow of colours so you can pick your shade and show off your style.', 1006, 1013, 1003);
+INSERT INTO ptech.CS_PRODUCT
+(ID, NAME, DESCRIPTION, MEDIA, LIST_MEDIA, PRICE)
+VALUES(1004, 'Samsung Galaxy 10 Plus', 'Samsung Galaxy 10 Plus. Larger phone of the Galaxy 10 range.', 1007, 1013, 1003);
+INSERT INTO ptech.CS_PRODUCT
+(ID, NAME, DESCRIPTION, MEDIA, LIST_MEDIA, PRICE)
+VALUES(1005, 'IPhone 256GB Black', 'owered by the blazing fast A13 Bionic processor nothing will hold you back. The new night mode will take perfect photos in low light conditions, and the front camera can even take a slow-mo video!', 1001, 1010, 1002);
+INSERT INTO ptech.CS_PRODUCT
+(ID, NAME, DESCRIPTION, MEDIA, LIST_MEDIA, PRICE)
+VALUES(1006, 'IPhone 256GB Red', 'owered by the blazing fast A13 Bionic processor nothing will hold you back. The new night mode will take perfect photos in low light conditions, and the front camera can even take a slow-mo video! ', 1002, 1010, 1002);
+INSERT INTO ptech.CS_PRODUCT
+(ID, NAME, DESCRIPTION, MEDIA, LIST_MEDIA, PRICE)
+VALUES(1007, 'IPhone 256GB Green', 'IPhone 256 GB Green', 1003, 1010, 1002);
+INSERT INTO ptech.CS_PRODUCT
+(ID, NAME, DESCRIPTION, MEDIA, LIST_MEDIA, PRICE)
+VALUES(1008, 'IPhone 128GB Green', 'IPhone 256 GB Green', 1003, 1010, 1001);
 
-
-INSERT INTO ptech.CS_PRODUCT
-(ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
-VALUES(1001, 'IPhone 11', 'IPhone 11', 1001, 1001, 1010);
-INSERT INTO ptech.CS_PRODUCT
-(ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
-VALUES(1002, 'IPhone 12', 'IPhone 12', 1002, 1001, 1011);
-INSERT INTO ptech.CS_PRODUCT
-(ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
-VALUES(1003, 'Samsung Galaxy 20 Navy 128GB', 'Say hello to the 2021 Fan Edition of the Galaxy S20. It features a stunning Infinity-O Super AMOLED display, massive battery and triple cameras, all powered by a mighty Snapdragon 865 processor. Plus, it comes in a rainbow of colours so you can pick your shade and show off your style.', 1006, 1003, 1013);
-INSERT INTO ptech.CS_PRODUCT
-(ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
-VALUES(1004, 'Samsung Galaxy 10 Plus', 'Samsung Galaxy 10 Plus. Larger phone of the Galaxy 10 range.', 1007, 1003, 1013);
-INSERT INTO ptech.CS_PRODUCT
-(ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
-VALUES(1005, 'IPhone 256GB Black', 'owered by the blazing fast A13 Bionic processor nothing will hold you back. The new night mode will take perfect photos in low light conditions, and the front camera can even take a slow-mo video!', 1001, 1002, 1010);
-INSERT INTO ptech.CS_PRODUCT
-(ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
-VALUES(1006, 'IPhone 256GB Red', 'owered by the blazing fast A13 Bionic processor nothing will hold you back. The new night mode will take perfect photos in low light conditions, and the front camera can even take a slow-mo video! ', 1002, 1002, 1010);
-INSERT INTO ptech.CS_PRODUCT
-(ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
-VALUES(1007, 'IPhone 256GB Green', 'IPhone 256 GB Green', 1003, 1002, 1010);
-INSERT INTO ptech.CS_PRODUCT
-(ID, NAME, DESCRIPTION, MEDIA, PRICE, LIST_MEDIA)
-VALUES(1008, 'IPhone 128GB Green', 'IPhone 256 GB Green', 1003, 1001, 1010);
 
 
 INSERT INTO ptech.CS_ATTRIBUTE

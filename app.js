@@ -69,7 +69,7 @@ app.get("/product/:productid",(req,res) => {
     console.log("Found product with id:",prodId,", products:",products);
 
     products.map(item => console.log(JSON.parse(JSON.stringify(item))));
-    console.log("Array of json parsed: " + JSON.parse(JSON.stringify(products)));
+    console.log("Array of product parsed: " + JSON.parse(JSON.stringify(products)));
     console.log("Array of product json: " + JSON.stringify(products));
 
     res.status(200).json(products);

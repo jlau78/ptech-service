@@ -1,10 +1,20 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const Pool = require('pg').Pool;
-const dbconfig = require('./config/dbconfig');
+const postgres = require('postgresql');
+const dbconfig = require('./config/database.config.js');
 
-const connection = new Pool(dbconfig);
+const connection = postgres.createConnection({
+  host     : 'localhost',
+  user     : 'root',
+  password : 'password',
+  database : 'ptech'
+});
+
+connection.connect((err) => {
+    if(err) throw err;
+    console.log('Connected to Postgres Server!');
+});
 
 // Handle CORS by setting OPTIONS for express
 app.use(cors({
@@ -18,15 +28,15 @@ app.get("/products/:category",(req,res) => {
         + 'JOIN CS_CATEGORY_PRD CP ON CP.PRODUCT_ID = P.ID '
         + 'JOIN MEDIA M ON M.ID = P.LIST_MEDIA '
         + 'JOIN PRICE_INFO PI ON PI.ID = P.PRICE '
-        + 'WHERE CP.CATEGORY_ID=$1'
+        + 'WHERE CP.CATEGORY_ID=?'
 
     let products;
     let category = req.params.category;
     connection.query(sql, [category], (error, results, fields) => {
-        products = results.rows; 
+        products = results; 
         if (error) {
             console.error(error.message);
-            res.status(500).send('Internal server error:',error);
+            res.status(500).json('Internal server error:',error);
             return;
         }
 
@@ -46,16 +56,15 @@ app.get("/product/:productid",(req,res) => {
         + 'FROM CS_PRODUCT P '
         + 'JOIN MEDIA M ON M.ID = P.MEDIA '
         + 'JOIN PRICE_INFO PI ON PI.ID = P.PRICE '
-        + 'WHERE P.ID=$1'
+        + 'WHERE P.ID=?'
     let products;
     let prodId = req.params.productid;
     connection.query(sql, [prodId], (error, results, fields) => {
-        products = results.rows; 
+        products = results; 
         if (error) {
-            console.error('Error occurred querying pg:',error.message);
-            res.status(500).send('Internal server error happened:'+error);
-            // return;
-            throw error;
+            console.error(error.message);
+            res.status(500).json('Internal server error:',error);
+            return;
         }
 
     console.log("Found product with id:",prodId,", products:",products);
@@ -72,11 +81,11 @@ app.get("/product/:productid",(req,res) => {
 app.get("/skus/:productid",(req,res) => {
 
     let sql = 'SELECT S.ID, S.NAME, S.DESCRIPTION FROM CS_SKU S JOIN CS_PROD_SKU CP '
-    + 'ON CP.SKU_ID = S.ID WHERE CP.PRODUCT_ID=$1';
+    + 'ON CP.SKU_ID = S.ID WHERE CP.PRODUCT_ID=?';
     let skus = {};
     let productid = req.params.productid;
     connection.query(sql, [productid], (error, results, fields) => {
-        skus = results.rows; 
+        skus = results; 
         if (error) {
             console.error(error.message);
             res.status(500).send('Internal server error:',error);
@@ -96,16 +105,16 @@ app.get("/attribs/:productid",(req,res) => {
     + 'FROM CS_PRODUCT P '
     + 'JOIN CS_PROD_ATTRIBUTE CP ON CP.PRODUCT_ID = P.ID '
     + 'JOIN CS_ATTRIBUTE CA ON CA.ID = CP.ATTRIBUTE_ID '
-    + 'WHERE P.ID = $1'
+    + 'WHERE P.ID =?'
     ;
 
     let attributes;
     let product = req.params.productid;
     connection.query(sql, [product], (error, results, fields) => {
-        attributes = results.rows; 
+        attributes = results; 
         if (error) {
             console.error(error.message);
-            res.status(500).send('Internal server error:',error);
+            res.status(500).json('Internal server error:',error);
             return;
         }
 

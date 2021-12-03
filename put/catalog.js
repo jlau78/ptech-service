@@ -30,7 +30,7 @@ app.post('/create/product', (req, res) => {
     payload.media = mediaId;
     let productId = createProduct(payload);
     
-    res.status(200).send(JSON.stringify(payload));
+    res.status(201).send('Product successfully created: id:'+productId+', product: '+JSON.stringify(payload));
 
   } else {
     console.error("Error: request is undefined: ", err);
@@ -40,7 +40,7 @@ app.post('/create/product', (req, res) => {
 });
 
 function createImage(payload) {
-  let sql = 'INSERT INTO MEDIA (name, type, path) VALUES ($1, $2, $3)';
+  let sql = 'INSERT INTO MEDIA (name, type, path) VALUES ($1, $2, $3) RETURNING ID';
 
   let media = payload.media;
   connection.query(sql, [media.name, media.type, media.path], (error, results, fields) => {
@@ -63,7 +63,7 @@ function createImage(payload) {
 
 
 function createPrice(payload) {
-  let sql = 'INSERT INTO PRICE_INFO (ref, price, tax) VALUES ($1, $2, $3)';
+  let sql = 'INSERT INTO PRICE_INFO (ref, price, tax) VALUES ($1, $2, $3) RETURNING ID';
 
   let price = payload.price;
   connection.query(sql, [price.ref, price.price, price.tax], (error, results, fields) => {
@@ -75,16 +75,13 @@ function createPrice(payload) {
 
     console.log("Success: created priceInfo item:", results);
    
-    if (results.rows != null || results.rows != undefined) {
-      return results.rows[0].id;
-    } else {
-      return null;
-    }
+    return results.rows[0].id;
     
   });
 }
 function createProduct(product) {
-  let sql = 'INSERT INTO CS_PRODUCT (name, description, price, image_url) VALUES ($1, $2, $3, $4)';
+  // let sql = 'INSERT INTO CS_PRODUCT (name, description, price, image_url) VALUES ($1, $2, $3, $4)';
+  let sql = 'INSERT INTO CS_PRODUCT (name, description, price, media) VALUES ($1, $2, $3, $4) RETURNING ID';
 
   connection.query(sql, [product.name, product.description, product.price, product.media], (error, results, fields) => {
 
